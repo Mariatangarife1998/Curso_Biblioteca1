@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('foo', function () {
+//     return 'Hello World';
+// });
+
+// Route::get('permiso', 'PermisoController@create');
+
+// Route::get('admin/sistema/permisos', 'PermisoController@index')->name('permiso');
+
+Route::get('permiso/{nombre}', function ($nombre) {
+    return $nombre;
+})->where('nombre', '[0-9]+')->name('permiso');
