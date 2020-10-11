@@ -3,7 +3,7 @@
     <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Boxed Layout</title>
+    <title>@yield('titulo','Biblioteca1') | TutorialesVirtuales</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
     <!-- Boostrap 3.3.7 -->
@@ -17,6 +17,10 @@
     <!-- AdminLTE Skins. choose a skin from the css/skins
     folder instead of dowloading all of them to reduce the load -->
     <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/skins/_all-skins.min.css")}}">
+
+    <link rel="stylesheet" href="{{asset("assets/css/custom.css")}}">
+
+    @yield("styles")
         {{--   HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries   --}}
       {{--   WARNING: Respond.js doesn't work if you view the page via file://   --}}
       {{--   [if lt IE 9]>
@@ -40,10 +44,11 @@
            {{--  <!-- Content Wrapper. Contains page content -->  --}}
         <div class="content-wrapper">
            {{--  <!-- Content Header (Page header) -->  --}}
+           
           <section class="content">  
-             
              @yield('contenido')
         </section>
+
       </div>
       {{--  Inicio Footer  --}}
       @include("theme/$theme/footer")
@@ -59,9 +64,7 @@
      {{--  <!-- AdminLTE App -->  --}}
      <script src="{{asset("assets/$theme/dist/js/adminlte.min.js")}}"></script>
      {{--  <!-- AdminLTE for demo purposes -->  --}}
-     
-
-     @yield('scripts')
+      @yield('scripts')
         </div>
     </body>
 </html>
