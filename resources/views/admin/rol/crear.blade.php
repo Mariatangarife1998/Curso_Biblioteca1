@@ -1,11 +1,11 @@
 @extends("theme.$theme.layout")
 
 @section('titulo')
-   Sistema Menús
+   Roles
 @endsection
 
 @section('scripts')
-    <script src="{{asset("assets/pages/scripts/admin/menu/crear.js")}}" type="text/javascript"></script>
+    <script src="{{asset("assets/pages/scripts/admin/crear.js")}}" type="text/javascript"></script>
 @endsection
 
 @section('contenido') 
@@ -15,12 +15,17 @@
             @include('includes.mensaje')
             <div class="box box-danger">
                 <div class="box-header whith-border">
-                    <h3 class="box-title">Crear Menús</h3>
+                <h3 class="box-title">Crear Rol</h3>
+                    <div class="box-tools pull-right"> 
+                        <a href="{{route('rol')}}" class='btn btn-block btn-info btn-sm'>
+                        <i class="fa fa-fw fa-reply-all"></i>Volver al Listado
+                        </a>
+                    </div>
                 </div>
-            <form action="{{route('guardar_menu')}}" id="form-general" class="form-horizontal" method="POST" autocomplete="off"> 
+            <form action="{{route('guardar_rol')}}" id="form-general" class="form-horizontal" method="POST" autocomplete="off"> 
                 @csrf
                     <div class="box-body">
-                        @include('admin.menu.form')
+                        @include('admin.rol.form')
                     </div>
                         <div class="box-footer">
                             <div class="col-lg-3"></div>
@@ -33,3 +38,4 @@
         </div>
     </div>
 @endsection
+

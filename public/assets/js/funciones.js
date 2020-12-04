@@ -1,4 +1,4 @@
-var Biblioteca1 = function () {
+var Biblioteca = function () {
     return {
         validacionGeneral: function (id, reglas, mensajes) {
             const formulario = $('#' + id);
@@ -33,9 +33,27 @@ var Biblioteca1 = function () {
                     
                 },
                 submitHandler: function (form) {
-                    // return true;
+                    return true;
                 }
             });
+        },
+        notificaciones: function (mensaje,titulo,tipo) {
+           toastr.options = {
+                claseButton: true,
+                newestOnTop: true,
+                positionClass: 'toast-top-right',
+                preventDuplicates: true,
+                timeOut: '5000'
+            };
+            if (tipo == 'error') {
+                toastr.error(mensaje, titulo);
+            }else if (tipo == 'success'){
+                toastr.success(mensaje, titulo);
+            }else if (tipo == 'info'){
+                toastr.info(mensaje, titulo);
+            }else if (tipo == 'warning'){
+                toastr.warning(mensaje, titulo);
+            }
         },
     }
 }();
